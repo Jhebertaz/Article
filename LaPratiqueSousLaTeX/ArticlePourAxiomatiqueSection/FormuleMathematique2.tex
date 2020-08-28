@@ -1,0 +1,95 @@
+\subsection{Comment faire des équations mathématiques}
+La présentation de l'environnement \textit{equation} terminé peut passer à l'élaboration de formules et d'expressions plus complexes à l'image l'équation (\ref{darboux}). Il y a d'abord les indices et les exposants qui sont respectivement positionnés par \_ et \^~($a^2=$\verb|a^2|). S'il y a plus d'un caractère à être mis en exposant ou en indice, ceux-ci sont alors regroupés entre accolades \verb|{...}|.
+\[e^\pi i\neq e^{\pi i}\qquad\verb|e^\pi i\neq e^{\pi i}|\]
+\par Ce groupement entre accolades est fait dès qu'il y a plus d'un élément à mettre dans un opérateur tel que la racine n\ieme{}. %(ou toute autre opération ainsi que les fonctions cf.~Table~\ref{amsfunction}):
+\[\sqrt abc\neq \sqrt{abc}\qquad\verb|\sqrt abc\neq \sqrt{abc}|\]
+\par La commande \verb|\surd| permet d'obtenir seulement le symbole de la racine carrée. Similairement aux variables, les opérateurs \textit{n-aires} (à différentier des opérateurs binaires Eg.~\verb|+|) telles que la sommation utilise la même syntaxe pour les bornes (voir l'équation~\ref{lfourier}).
+%
+\begin{table}[H]
+	\centering
+	\begin{equation}\label{lfourier}
+	a_n=\frac{1}{L}\int_{-L}^{L}f(x)\cos
+	\frac{n\pi x}{L}\,dx,\,n=1,2,\dots
+	\end{equation}
+	\hrule
+	\begin{verbatim}
+	\begin{equation}
+	a_n=\frac{1}{L}\int_{-L}^{L}f(x)\cos
+	\frac{n\pi x}{L}\,dx,\,n=1,2,3,\dots
+	\end{equation}
+	\end{verbatim}
+	\hrule
+\end{table}
+%
+\subsubsection{Formules multiples}
+Souvent lors de manipulations arithmétiques, il est requis d'écrire une série d'égalité (ou inégalité) jusqu'à la réponse simplifiée. Il existe plusieurs environnements permettant d'écrire des formules sur plus d'une ligne notamment \verb|align, eqnarray, array, gather| ainsi que leur commande étoilée, mais ces dernières sont rapidement difficiles à utiliser lorsque les membres de l'équation sont trop longs.
+%
+\begin{table}[H]
+	\centering
+	%% Exemple du lshort
+	\begin{eqnarray}
+	a & = & b + c     \\
+	& = & d + e + f + g + h^2 + i^2
+	+j + k + l + o
+	\label{eq:eqnarrayfautif}
+	\end{eqnarray}
+	\hrule
+	\begin{verbatim}
+	\begin{eqnarray}
+	a & = & b + c     \\
+	& = & d + e + f + g + h^2+i^2
+	+j + k + l + o
+	\end{eqnarray}		
+	\end{verbatim}
+	\hrule
+\end{table}
+%
+\par Pour essayer de régler le problème, simplifier les équations est souvent la solution la plus facile, mais dans le cas où c'est impossible, l'environnement \verb|IEEEeqnarray| \footnote{\url{https://ras.papercept.net/conferences/support/files/IEEEtran_HOWTO.pdf}} propose une panoplie d'outils et d'options pour les équations multilignes (à ne pas confondre avec l'environnement \verb|multline| qui est utilisé lorsque les équations sont démesurément longues pour tenir sur une ligne). Les prochains exemples font un bref survole de \verb|IEEEeqnarray|, mais ne sont nullement représentatif de toutes les possibilités qu'offre l'extension. Pour avoir accès à cedit environnement, il suffit d'entrer dans le préambule la commande suivante avec l'option \verb|\usepackage[retainorgcmds]{IEEEtrantools}|. Malgré tout, il est possible d'avoir des chevauchements similaires l'équation~\ref{eq:eqnarrayfautif}. Le cas échéant, l'on peut couper via \verb|\\| et aligner avec \verb|&| de la même façon que pour environnement \verb|eqnarray|. Les membres de gauches et de droite respectivement, sont plus proche du symbole central, celui entre \verb|&...&|.
+%
+\begin{table}[H]
+	\centering
+	%% Exemple modifié du lshort
+	\begin{IEEEeqnarray}{rCl}
+	a & = & b + c       \\
+	& = & d + e + f + g + h^2+i^2
+	+j + k + l + n + o
+	\IEEEeqnarraynumspace
+	\label{eq:IEEEeqnarrayfautif}
+	\end{IEEEeqnarray}
+	\hrule
+	\begin{verbatim}
+	\begin{IEEEeqnarray}{rCl}
+	a & = & b + c       \\
+	& = & d + e + f + g + h^2+i^2
+	+j + k + l + n + o
+	\IEEEeqnarraynumspace
+	\end{IEEEeqnarray}
+	\end{verbatim}
+	\hrule
+\end{table}
+%
+\par Cependant, le résultat n'est toujours pas optimal puisque la longueur du membre de gauche \ref{eq:IEEEeqnarrayfautif} n'est pas balancée par rapport à l'équation précédente. Les numéros d'équations ont été poussés à l'extérieur de la colonne ce qui est aussi un problème. Diviser le membre en plusieurs parties permet de corriger cette coquille esthétique.
+%
+\begin{table}[H]
+	\centering
+	%% Exemple modifié du lshort
+	\begin{IEEEeqnarray}{rCl}
+	a & = & b + c\\
+	& = & d + e + f + g + h^2+i^2\nonumber\\
+	&   & +\:j + k + l + n + o
+	\label{eq:IEEEeqnarraycorrect}
+	\end{IEEEeqnarray}
+	\hrule
+	\begin{verbatim}
+	\begin{IEEEeqnarray}{rCl}
+	a & = & b + c\\
+	&=&d + e + f + g + h^2+i^2\nonumber\\
+	& & +\:j + k + l + n + o
+	\end{IEEEeqnarray}
+	\end{verbatim}
+	\hrule
+\end{table}
+%
+\par Puisque l'addition est un opérateur binaire,non unaire ($\displaystyle{2-2}$ vs $\displaystyle{-2}$) d'où l'importance d'ajouter un espacement (avant la variable) via la commande \verb|\:| lorsque la partie de la formule commence par un opérateur.
+%
+\par La maitrise des équations sur plusieurs lignes est un précurseur à l'élaboration de tableaux et par là même de matrice. Les tableaux, les matrices et les objets flottants sont d'ailleurs le point faible de \LaTeX{} et fera le sujet de la prochaine rubrique dans le cadre le l'introduction à \LaTeX{}. 

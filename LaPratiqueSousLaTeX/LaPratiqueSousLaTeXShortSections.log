@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.7.19)  28 AUG 2020 09:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.7.19)  28 AUG 2020 12:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -658,13 +658,13 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 6
 .
 
 (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
 [][][]\T1/cmr/m/n/8 .[][][]$\T1/cmtt/m/n/8 https : / / fr . wikibooks . org / w
 iki / LaTeX / %C3 % 89l %
  []
@@ -672,23 +672,23 @@ iki / LaTeX / %C3 % 89l %
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<PingHistogramTue 5 May 2020 084447.pdf, id=27, 260.975pt x 158.5925pt>
+<PingHistogramTue 5 May 2020 084447.pdf, id=29, 260.975pt x 158.5925pt>
 File: PingHistogramTue 5 May 2020 084447.pdf Graphic file (type pdf)
 <use PingHistogramTue 5 May 2020 084447.pdf>
 Package pdftex.def Info: PingHistogramTue 5 May 2020 084447.pdf  used on input 
-line 26.
+line 28.
 (pdftex.def)             Requested size: 171.99922pt x 104.52374pt.
-<PingQuantilePlotTue 5 May 2020 084447.pdf, id=28, 260.975pt x 164.615pt>
+<PingQuantilePlotTue 5 May 2020 084447.pdf, id=30, 260.975pt x 164.615pt>
 File: PingQuantilePlotTue 5 May 2020 084447.pdf Graphic file (type pdf)
 <use PingQuantilePlotTue 5 May 2020 084447.pdf>
 Package pdftex.def Info: PingQuantilePlotTue 5 May 2020 084447.pdf  used on inp
-ut line 30.
+ut line 32.
 (pdftex.def)             Requested size: 171.99922pt x 108.49301pt.
-<PingListPlotTue 5 May 2020 084448.pdf, id=29, 260.975pt x 131.49126pt>
+<PingListPlotTue 5 May 2020 084448.pdf, id=31, 260.975pt x 131.49126pt>
 File: PingListPlotTue 5 May 2020 084448.pdf Graphic file (type pdf)
 <use PingListPlotTue 5 May 2020 084448.pdf>
 Package pdftex.def Info: PingListPlotTue 5 May 2020 084448.pdf  used on input l
-ine 34.
+ine 36.
 (pdftex.def)             Requested size: 171.99922pt x 86.6621pt.
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
@@ -714,13 +714,13 @@ t changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
  ) 
 Here is how much of TeX's memory you used:
- 11068 strings out of 480478
- 175838 string characters out of 5905959
- 563898 words of memory out of 5000000
- 26883 multiletter control sequences out of 15000+600000
+ 11065 strings out of 480478
+ 175799 string characters out of 5905959
+ 564898 words of memory out of 5000000
+ 26879 multiletter control sequences out of 15000+600000
  542960 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,9n,52p,1519b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,9n,52p,1096b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
 exmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts
 /type1/public/cm-super/sfcc1000.pfb></usr/share/texmf-dist/fonts/type1/public/c
@@ -729,11 +729,11 @@ m-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm080
 re/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sftt1000.pfb>
-Output written on LaPratiqueSousLaTeXShortSections.pdf (2 pages, 3705714 bytes)
+Output written on LaPratiqueSousLaTeXShortSections.pdf (2 pages, 3718942 bytes)
 .
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
+ 102 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
  24 words of extra memory for PDF output out of 10000 (max. 10000000)
 
