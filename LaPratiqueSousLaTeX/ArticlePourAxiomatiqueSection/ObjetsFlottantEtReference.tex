@@ -1,0 +1,55 @@
+\section{Objets flottants}
+Parmi les forces de \LaTeX figure les références croisées utilisées dans nombre d'articles afin de garder une clartée.  D'une manière générale plus il y a d'images, de tableaux et de graphiques plus il est difficile de gérer l'alignement de ces objets tout en gardant les références croisées à jour. Les références croisées servent à indiquer au lecteur un objet flottant, une formule et, etc. en étiquettant l'objet. Ce constat est surtout vrai sur des logiciels de traitement de texte tels que \textit{LibreOffice} et la \textit{Suite Office}. Cela est, presque, facile sous \LaTeX, puisqu'il gère ces différents éléments de manière à rendre le document harmonieux (sans prise de tête pour l'automatisation de la numérotation). Pour commencer, l'on doit mettre certaine extension dans le préambule \textit{graphicx, subfig, float} et \textit{caption} qui respectivement servent à l'insertion d'image, à la manipulation (références) des \og petits \fg{} flottant dans une unique figure, à améliorer l'interface pour la défintion des objets flottants et à personnaliser les légendes dans les environnements flottants. Le fonctionnement de l'environnement flottant \textit{figure} va comme suit:
+\begin{figure}[tph!]
+	\begin{verbatim}
+	\begin{figure}[tph!]
+	    \centering
+	    \includegraphics[width=1\linewidth]%
+	        {image}
+	    \caption[Cour texte]{Long texte}
+	    \label{fig:image}
+	\end{figure}
+	\end{verbatim}
+\end{figure}
+
+Les lettres placer entre crochet sont les paramètre de position de la figure dont une liste détailler se trouver sur Wikibook\footnotemark \footnotetext{\url{https://fr.wikibooks.org/wiki/LaTeX/\%C3\%89l\%C3\%A9ments\_flottants\_et\_figures}}. Concernant les réréfences croisées le fonctionnement est encore plus simple : l'on ajoute une étiquette avec la commande \verb|\label{|\textit{marqueur}\verb|}| pour ensuite la référencer avec \verb|\ref{|\textit{marqueur}\verb|}|. Les références croisées sont importantes en raison de la manière dont \LaTeX~ gère le positionnement des objet flottant. Ces derniers peuvent être situé avant ou après leur position relative dans le code
+
+\onecolumn
+%
+\par Avec les graphiques, il parfois nécessaire de changer orientation de la page de même que sa structure, passer de deux colonnes à une seule. Le changement d'orientation est fourni par l'extension \verb|lscape| (à inclure dans le préambule). Les commandes \verb|\onecolumn| et \verb|\twocolumn| permette de changer la structure en de la page. L'extension \verb|mulitcols|, il est possible d'avoir neuf colonnes sur une page (cette extension fournit l'environnement\footnote{\url{http://ctan.mirror.colo-serv.net/macros/latex/required/tools/multicol.pdf}} \verb|multicols|).
+
+%
+\begin{figure}[H]
+	\centering
+	\subfloat[Histogramme du temps aller-retour des requêtes envoyé aux serveurs de Google.ca à travers un réseau IP]{%
+		{\includegraphics[width=0.4\linewidth]{"PingHistogramTue 5 May 2020 084447"}}%
+	}%
+	\qquad
+	\subfloat[Le graphique des quantiles normaux de la distribution]{%
+		{\includegraphics[width=0.4\linewidth]{"PingQuantilePlotTue 5 May 2020 084447"}}%
+	}%
+	\qquad
+	\subfloat[Évolution du pingtime dans le temps (ordre chronologique)]{%
+		{\includegraphics[width=0.4\linewidth]{"PingListPlotTue 5 May 2020 084448"}}%
+	}%
+	\caption{Résultat d'un algorithme sur Mathematica}%
+	\label{fig:example}%
+	\hrule
+	\begin{verbatim}
+	\begin{figure}[!htp]%
+	\centering
+	\subfloat[Histogramme du temps aller-retour des requêtes
+	envoyés aux serveurs de Google.ca à travers un réseau IP]{%
+	{\includegraphics[width=0.4\linewidth]{image1}} }\qquad
+	\subfloat[Le graphique des quantiles normaux de la distributions]{%
+	{\includegraphics[width=0.4\linewidth]{image2}} }\qquad
+	\subfloat[Évolution du pingtime dans le temps (ordre chronologique)]{%
+	{\includegraphics[width=0.6\linewidth]{image3}} }%
+	\caption{Résultat de l'algorithme sur Mathematica}%
+	\end{figure}
+	\end{verbatim}
+	\hrule
+\end{figure}
+%https://www.latex-project.org/help/documentation/amsldoc.pdf
+%http://mirrors.ibiblio.org/CTAN/info/lshort/french/lshort-fr.pdf
+%https://cs.overleaf.com/learn
