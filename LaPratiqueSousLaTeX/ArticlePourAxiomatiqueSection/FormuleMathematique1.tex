@@ -1,4 +1,4 @@
-	\section{Formules mathématiques}
+	\section*{Formules mathématiques}
 	Les mathématiques est l'un des atouts essentiels de \LaTeX{} puisque l'implémentation de formule dans un document est somme tout assez simple. Pour ce faire, on utilise l'un des groupes d'extensions de mathématiques avancées nommément \AmS-\LaTeX. Cet ensemble d'extension est produit par \emph{American Mathematical Society}. Il suffit d'inscrire dans le préambule.
 %
 	\begin{verbatim}
@@ -12,7 +12,7 @@
 	%% La définition des colonnes aurait pu être changée pour alléger le code
 	%% Organiser les colones aides pour la lisibilité du code
 %	
-	\subsection{Équation simple}
+	\subsection*{Équation simple}
 	Définissons en premier lieu le concept d'équation \textit{en-ligne} comme celle-ci $a^2+b^2=c^2$ (théorème de Pythagore) et le concept d'équation  \textit{hors-texte}  tel qu'imprimée ci-dessous 
 	\[
 	\forall\varepsilon_{>0},\exists\delta : \forall x \in D_f \cap V(x_0,\delta), f(x)\in V\big(f(x_0),\varepsilon\big)
@@ -57,12 +57,11 @@
 		\hrule
 	\end{table}
 %
-	\par Cette formule se trouve dans l'environnement \textit{equation} sous sa forme abrégée, c.-à-d. qu'elle est contenue dans \verb|\[...\]| tandis que le théorème de Pythagore est simplement en mode mathématique, c.-à-d. qu'elle est inscrite entre  \verb|$...$|. À noter que pour (\ref{loufoque}) l'environnement \textit{equation} serait plus adéquat du fait que l'expression est référencée%(les références croisées sont traitées à la page \ref{crossreferenncing})
+	\par Cette formule se trouve dans l'environnement \textit{equation} sous sa forme abrégée, c.-à-d. qu'elle est contenue dans \verb|\[...\]| tandis que le théorème de Pythagore est simplement en mode mathématique, c.-à-d. qu'elle est inscrite entre  \verb|$...$| (ou \verb|\(...\)|). À noter que pour (\ref{loufoque}) l'environnement \textit{equation} serait plus adéquat du fait que l'expression est référencée%(les références croisées sont traitées à la page \ref{crossreferenncing})
 	. D'ailleurs, il parfois plus sage d'utiliser l'environnement au lieu de sa version compacte pour des raisons de lisibilité du code. En revanche, si l'équation n'a pas à être référencée et qu'elle est plus ou moins complexe, alors il faut utiliser \textit{equation*}. La particularité du mode mathématique est que toutes les lettres sont prises comme des variables et sont ainsi imprimées en italique, mais souvent les fonctions sont en police droite. Ce sont les extensions de \textit{AMS} qui fournissent la plupart des fonctions populaires dont la police est droite ($\sin \neq sin$). %Voir la Table~\ref{amsfunction} résumant les principales fonctions de l'\AmS.
-	Si une fonction est absente des extensions mentionnées plus haut, il est possible de créer des fonctions de même qu'il est possible de créer des opérateurs n-aires en ajoutant dans le préambule des commandes semblables à celle-ci
-	\verb|\DeclareMathOperator{command}{definition}| (voir l'équation~\ref{newoperator}). Il est aussi possible définir des opérateurs simples via \verb|newcommand| seulement dans le cas opérateurs n-aires les bornes seront plus difficile à manipuler d'autant qu'il faut le définir en police droite.  
+	Si une fonction est absente des extensions mentionnées plus haut, il est possible de créer cet fonction de même qu'il est possible de créer ces propres opérateurs n-aires en ajoutant respectivement dans le préambule des commandes semblables à celles-ci \verb|\DeclareMathOperator{command}{definition}| (voir l'équation~\ref{newoperator}). Il est aussi possible définir des opérateurs simples via \verb|newcommand| seulement dans le cas opérateurs n-aires les bornes seront plus difficile à manipuler d'autant qu'il faut le définir en police droite. 
 %
-	\par Pour conclure cette première section sur le volet mathématique de \LaTeX{} voici un exemple d'utilisation tiré du \textit{lshort}\footnote{\url{http://mirrors.ibiblio.org/CTAN/info/lshort/french/lshort-fr.pdf}} de ces commandes dont la particularité de la déclaration étoilée est le fait de créer un opérateur n-aire.
+	\par Pour conclure cette première section sur le volet mathématique de \LaTeX{} voici un exemple d'utilisation tiré du \textit{lshort}\footnote{\url{http://mirrors.ibiblio.org/CTAN/info/lshort/french/lshort-fr.pdf}} de ces commandes dont la particularité de la déclaration étoilée est le fait de créer un opérateur n-aire. 
 %	
 	\begin{table}[H]
 		%Exemple du lshort
@@ -80,3 +79,4 @@
 		\hrule
 	\end{table}
 %
+Dans la prochaine rubrique portant encore sur les formules mathématiques, il sera question de comment rédiger des suites d'équations qui se succèdent et qui se superposent.
