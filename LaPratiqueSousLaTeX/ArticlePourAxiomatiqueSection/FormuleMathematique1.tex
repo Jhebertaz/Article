@@ -1,5 +1,5 @@
-	\section*{Formules mathématiques}
-	Les mathématiques est l'un des atouts essentiels de \LaTeX{} puisque l'implémentation de formule dans un document est somme tout assez simple. Pour ce faire, on utilise l'un des groupes d'extensions de mathématiques avancées nommément \AmS-\LaTeX. Cet ensemble d'extension est produit par \emph{American Mathematical Society}. Il suffit d'inscrire dans le préambule.
+	\section*{Formules mathématiques I}
+	Les mathématiques sont l'un des atouts essentiels de \LaTeX{} puisque l'implémentation de formule dans un document est somme toute assez simple. Pour ce faire, on utilise l'un des groupes d'extensions de mathématiques avancées nommément \AmS-\LaTeX. Cet ensemble d'extension est produit par \emph{American Mathematical Society}. Il suffit d'inscrire dans le préambule.
 %
 	\begin{verbatim}
 		\usepackage{amsmath}
@@ -30,9 +30,9 @@
 		\hrule
 		\begin{verbatim}
 		\begin{equation}
-		R^+(f,P):=
-		\sup_{\substack{\xi_j\in I_j\\ 0<j<n }}
-		R(f,P,\xi)
+		    R^+(f,P):=%
+		    \sup_{\substack{\xi_j\in I_j\\ 0<j<n }}%
+		    R(f,P,\xi)
 		\end{equation}
 		\end{verbatim}
 		\hrule
@@ -59,7 +59,23 @@
 %
 	\par Cette formule se trouve dans l'environnement \textit{equation} sous sa forme abrégée, c.-à-d. qu'elle est contenue dans \verb|\[...\]| tandis que le théorème de Pythagore est simplement en mode mathématique, c.-à-d. qu'elle est inscrite entre  \verb|$...$| (ou \verb|\(...\)|). À noter que pour (\ref{loufoque}) l'environnement \textit{equation} serait plus adéquat du fait que l'expression est référencée%(les références croisées sont traitées à la page \ref{crossreferenncing})
 	. D'ailleurs, il parfois plus sage d'utiliser l'environnement au lieu de sa version compacte pour des raisons de lisibilité du code. En revanche, si l'équation n'a pas à être référencée et qu'elle est plus ou moins complexe, alors il faut utiliser \textit{equation*}. La particularité du mode mathématique est que toutes les lettres sont prises comme des variables et sont ainsi imprimées en italique, mais souvent les fonctions sont en police droite. Ce sont les extensions de \textit{AMS} qui fournissent la plupart des fonctions populaires dont la police est droite ($\sin \neq sin$). %Voir la Table~\ref{amsfunction} résumant les principales fonctions de l'\AmS.
-	Si une fonction est absente des extensions mentionnées plus haut, il est possible de créer cet fonction de même qu'il est possible de créer ces propres opérateurs n-aires en ajoutant respectivement dans le préambule des commandes semblables à celles-ci \verb|\DeclareMathOperator{command}{definition}| (voir l'équation~\ref{newoperator}). Il est aussi possible définir des opérateurs simples via \verb|newcommand| seulement dans le cas opérateurs n-aires les bornes seront plus difficile à manipuler d'autant qu'il faut le définir en police droite. 
+	Si une fonction est absente des extensions mentionnées plus haut, il est possible de créer des fonctions de même que de nouveaux opérateurs n-aires en ajoutant respectivement dans le préambule des commandes semblables à celles-ci \verb|\DeclareMathOperator{command}{definition}| (voir l'équation~\ref{newoperator}). Les opérateurs simples peuvent aussi être définit via \verb|newcommand| seulement dans le cas opérateurs n-aires les bornes seront plus difficile à manipuler d'autant qu'il faut le définir en police droite. L'utilisation de \verb|newcommand| est beaucoup plus vaste. L'on peut définir des macros commandes pour accélérer la rédaction. En voici deux exemples :
+	\begin{table}[H]
+		Les éléments de la matrice \(\identity\) appartiennent aux \(\real\).\\*[1mm]
+		\hrule
+		\begin{verbatim}
+%		\newcommand{\real}{\mathbbb{R}}
+%		\newcommand{\identity}{%
+%			\begin{pmatrix}
+%			    1&0\\0&1
+%			 \end{pmatrix}%
+%		 }
+		Les éléments de la matrice \(\identity\) appartiennent 
+		aux \(\real\).
+		\end{verbatim}
+		\hrule
+	\end{table}
+	Les lignes en commentaire (débutant par \verb|\%|) indique que le code doit être mis dans le préambule.
 %
 	\par Pour conclure cette première section sur le volet mathématique de \LaTeX{} voici un exemple d'utilisation tiré du \textit{lshort}\footnote{\url{http://mirrors.ibiblio.org/CTAN/info/lshort/french/lshort-fr.pdf}} de ces commandes dont la particularité de la déclaration étoilée est le fait de créer un opérateur n-aire. 
 %	
@@ -70,10 +86,10 @@
 		\end{equation}
 		\hrule
 		\begin{verbatim}
-			%\DeclareMathOperator{\argh}{argh}
-			%\DeclareMathOperator*{\Nut}{Nut}
+%		\DeclareMathOperator{\argh}{argh}
+%		\DeclareMathOperator*{\Nut}{Nut}
 			\begin{equation*}
-			3\argh = 2\Nut_{x=1}
+			    3\argh = 2\Nut_{x=1}
 			\end{equation*}
 		\end{verbatim}
 		\hrule
