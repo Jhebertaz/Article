@@ -42,7 +42,18 @@
 % Modification/Définition
 \newcolumntype{L}{>{$}l<{$}}
 \newcolumntype{V}{>{\ttfamily\textbackslash}l}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{45pt}
+\renewcommand{\headrulewidth}{0.5pt} 
+\lfoot{}
+\rfoot{}
+\rhead{Julien Hébert-Doutreloux}
+\chead{}
+\lhead{\url{https://www.laxiomatique.com}\\
+\url{https://github.com/Jhebertaz/Article}}
+\cfoot{} 
 \begin{document}
-	\pagestyle{empty}
-	\input{ArticlePourAxiomatiqueSection/ObjetsFlottantEtReference}
+	\pagestyle{fancy}
+	\input{ArticlePourAxiomatiqueSection/FormuleMathematique1}
 \end{document}

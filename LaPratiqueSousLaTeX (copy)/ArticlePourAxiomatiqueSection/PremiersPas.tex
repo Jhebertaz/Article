@@ -1,0 +1,56 @@
+% Les premiers pas sous LaTeX consiste en la production d'un document simple afin d'explorer les différentes structures.
+\section*{Premiers pas}
+Au travers de cette section, il sera question de produire un premier document avec \LaTeX. Mais avant tout, une bonne connaissance des bases que sont les symboles réservés, la syntaxe, les environnements ainsi que les diverses commandes intégrées est nécessaires pour être en mesure d'appréhender les différents exemples de cette initiation à \LaTeX.
+%	
+\subsection*{Les caractères réservés}
+Un trait commun à nombre de langages de programmation est bien évidemment l'existence de caractères spéciaux. Ces caractères ont, pour la plupart, des utilisations spécifiques. Notons ces symboles suivants :
+%	
+\begin{center}
+	\# \$ \% \^{} \& \_ \{ \} \~{}  \textbackslash
+\end{center}
+%
+\par Et voici respectivement comment ils sont générés suivant les commandes ci-dessous :
+\begin{flushleft}\label{lst:Caratères réservés}
+	\verb|\# \$ \% \^{} \& \_ \{ \} \~{}|
+	\verb|\textbackslash|
+\end{flushleft}
+%
+Le symbole \% est utilisé pour mettre des commentaires dans le code, se qui est inscrit après n'apparait pas dans le document. Le symbole \$ sert entre autres à l'insertion d'équation en ligne telle que $x^{-1}=1$ (\verb|$x^{-1}=1$|). Pour cet exemple en particulier, le \^{} sert à mettre en exposant le $-1$ tandis que les accolades servent à spécifier ce qui est mis en exposant. Ce simple exemple n'est pas général, l'utilisation des caractères spéciaux est plus vaste.
+%
+\subsection*{La structure}
+Un article scientifique est ordonné par une structure suivant une logique de sectionnement et il en est de même pour un document rédigé sous \LaTeX. Seulement une préparation est requise avant d'entreprendre l'écriture. Il s'agit d'un préambule regroupant minimalement la classe du document (article, book, report, ou une classe personnalisée) ainsi qu'accessoirement certaines extensions (très utile pour la rédaction d'équations mathématiques). Pour la \textbf{classe} \emph{article} de même que pour toute autre classe, la structure pour produire un document est:
+%	
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l}
+		\hline
+		\verb|\documentclass[|\textit{options}\verb|]|\verb|{article}|\\
+		\verb|\usepackage{|\textit{package}\verb|}|\\
+		\vdots\\
+		\verb|\begin{document}|\\
+		\verb|	Hello World|\\
+		\vdots\\
+		\verb|\end{document}|\\
+		\hline
+	\end{tabular}
+\end{table}
+%
+\break 
+\begin{center}
+	\verb|\documentclass[|\textit{options}\verb|]|\verb|{article}|
+\end{center}
+%
+\par La première commande du préambule (ci-dessus) est celle indiquant le type de document dont les \textit{options} permettent de modifier le comportement et le style du fichier lors de sa sortie. Ces options trouvent toutes leurs utilités lors de la rédaction en une langue différente de l'anglais. Il en est de même pour ce document adapté à la langue française avec pour options \verb|[french, babel]|. Ensuite pour charger les diverses \textbf{extensions}, on utilise la commande \verb|\usepackage{|\textit{package}\verb|}|. Une fois le préambule complété,  le corps de l'article tient respectivement entre les commandes \verb|\begin{document}| puis \verb|\end{document}|. L'entièreté du contenu de l'article se retrouve dans cet environnement, ce qui suit n'est pas pris en compte. Enfin, dans l'optique de conserver une clarté au fils des paragraphes, \LaTeX{} propose plusieurs commandes de sectionnement dont le titre est contenu dans l'argument de ladite commande.
+%	
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l}
+		\verb|\section{|\textit{text}\verb|}|\\
+		\verb|\subsection{|\textit{text}\verb|}|\\
+		\verb|\subsubsection{|\textit{text}\verb|}|
+	\end{tabular}
+\end{table}
+%	
+\par Ces commandes ont aussi la possibilité d'avoir un titre plus court de telle sorte qu'une section ayant un très long titre puisse rentrer dans la table des matières. L'option s'insère entre l'argument et la commande de la même façon que pour celle précisant le comportement du document. L'option permet de donner un titre concis pour la table de matières. Prenons pour exemple ce titre : Les déchets faibles ou Moyenne activité à Vie Courte. Ce dernier peut être réduit à : Les déchets  FMA-VC, où FMA-VC est une abréviation commune utilisée, entre autres, par l'agence nationale pour la gestion des déchets radioactifs (Andra).
+%
+\par Le point essentiel dans la rédaction est de transmettre des idées et des informations à un lecteur. Le sectionnement proposé ici aide à structurer ses idées. Pour le reste \LaTeX{} s'occupe de la typographie et bien entendu de la calligraphie.

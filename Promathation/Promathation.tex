@@ -1,0 +1,77 @@
+\documentclass[9pt,french, babel,twocolumn]{extarticle}
+\usepackage{blindtext}
+\usepackage[paperheight=11in,
+			paperwidth=8.5in,
+			top=0.5in,
+			bottom=0.5in,
+			right=0.5in,
+			left=0.5in]{geometry}
+\setlength{\columnsep}{0.1875in}
+\usepackage [french]{babel}
+\usepackage [utf8]{inputenc}
+\usepackage [T1] {fontenc}
+\usepackage{xspace}
+% Marge et mise en page
+\usepackage{layout}
+\usepackage{lscape}
+% Mise en page
+%\usepackage[letterpaper]{geometry}
+% American Mathematical Society Package 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amstext}
+% Environnement IEEEeqnarray
+\usepackage[retainorgcmds]{IEEEtrantools}
+% Divers 
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{float}
+\newfloat{Code}{H}{cod}
+
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{lipsum}
+\usepackage{hyperref}
+% Code environnement
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\lstset{style=mystyle}
+% https://fr.overleaf.com/learn/latex/Code_listing
+\newcommand{\real}{\mathbb{R}}
+\begin{document}
+	\section*{Promathation}
+	Combien de langage comprenez-vous ? Au vu du titre, il n'est évidemment pas question d'un système de signes vocaux tel le français, mais bien de langages de programmation tel Python. On retrouve ce dernier en mathématiques comme dans nombre d'autres domaines. En particulier, c'est dans le traitement et l'analyse de donnée que Python excelle et est employé. Encore une fois, le sujet ne concerne ni les bases du langage ni les notions élémentaires d'analyse numérique. Le présent article porte sur la compréhension de certains objets, de certains concepts et de certaines méthodes d'un point de vue mathématique pure. 
+	\subsection*{Analyse réel}
+		Débutons alors par quelque chose de simple. Soit \(f\) une application de \(\real\) à valeur dans \(\real\) telle que \(f(x)=x^2\). Déterminons la nature injective de \(f\). L'on sait que pour qu'une fonction soit injective, il faut absolument que pour chaque image, une seule préimage y soit associée. Autrement dit, que chaque flèche distinct tirée d'un archer atteigne une cible différente. Il est assez aisé de concevoir un petit programme qui executerai une boucle pour déterminer si une fonction simple est injective. L'on pourrait commencer par vouloir définir cettedite fonction. Du fait de la simplicité de la application précèdamment utilisée une fonction anynome (sans nom). 
+			\begin{Code}\ref{code:exemple1}
+				\lstinputlisting[language=Python]{exemple1.py}
+				\caption{exemple.py}
+			\end{Code}
+\end{document}

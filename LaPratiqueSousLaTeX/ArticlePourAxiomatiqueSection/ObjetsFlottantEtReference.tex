@@ -1,22 +1,51 @@
-\section{Objets flottants et références croisées}
-L'organisation d'un document ne se résume pas seulement à sa structure textuelle, les différents complément telle la pagination, la table des matière et même l'index. L'index, par exemple, repose sur une classification alphabetique des \textit{termes}\footnotemark\footnotetext{mots, concepts, objets,...} clés d'un ouvrage. L'allusion à un élément apparaissant dans le document est appelé référence croisée. Elle sont largement utilisé sous \LaTeX{} surtout en présence d'objets flottants. Les flottant, communément appelé \textit{floats}, sont des objects statiques ne pouvant être \og brisé\fg{}. D'une manière générale plus il y a d'images, de tableaux et de graphiques plus il est difficile de gérer l'alignement de ces objets tout en gardant les références croisées à jour.
+\section*{Objets flottants et références croisées}
+L'organisation d'un document ne se résume pas seulement à la structure textuelle, mais les différents compléments tels que la pagination, la table des matières, la bibliographie et même l'index sont tous aussi importants. L'index, par exemple, repose sur une classification alphabétique des \textit{termes}\footnotemark\footnotetext{Mots, concepts, objets...} clés d'un ouvrage. L'allusion à un élément apparaissant dans le document est appelée référence croisée. Elles sont largement utilisées sous \LaTeX{} surtout en présence d'objets flottants. Les flottants, communément appelés \textit{floats}, sont des objets statiques ne pouvant être \og brisés\fg{}. D'une manière générale, plus il y a d'images, de tableaux et de graphiques, et plus il sera difficile de gérer l'alignement de ces objets tout en gardant les références croisées à jour.
 % Les références croisées servent à indiquer  lecteur un objet flottant, une formule et, etc. en étiquettant l'objet.
-Ce constat est surtout vrai sur des logiciels de traitement de texte tels que \textit{LibreOffice} et la \textit{Suite Office}. Cela est, presque, facile sous \LaTeX, puisqu'il gère ces différents éléments de manière à rendre le document harmonieux (sans prise de tête pour l'automatisation de la numérotation). Pour commencer, l'on doit mettre certaine extension dans le préambule \textit{graphicx, subfig, float} et \textit{caption} qui respectivement servent à l'insertion d'image, à la manipulation (références) des \og petits \fg{} flottant dans une unique figure, à améliorer l'interface pour la défintion des objets flottants et à personnaliser les légendes dans les environnements flottants. Le fonctionnement de l'environnement flottant \textit{figure} va comme suit:
+\par Ce constat est surtout vrai sur des logiciels de traitement de texte tels que \textit{LibreOffice} et la \textit{Suite Office}. Cela est, presque, facile sous \LaTeX, puisqu'il gère ces différents éléments de manière à rendre le document harmonieux (sans prise de tête pour l'automatisation de la numérotation). Pour commencer, on doit mettre certaines extensions dans le préambule \textit{graphicx, subfig, float} et \textit{caption} qui respectivement servent à l'insertion d'image, à la manipulation des \og petits \fg{} flottants dans une unique figure, à améliorer l'interface pour la définition des objets flottants et à personnaliser les légendes dans les environnements flottants. Le fonctionnement de l'environnement flottant \textit{figure} va comme suit:
+%
 \begin{figure}[tph!]
+	\hrule\hspace{1pt}
 	\begin{verbatim}
-	\begin{figure}[tph!]
-	    \centering
-	    \includegraphics[width=1\linewidth]%
-	        {image}
-	    \caption[Cour texte]{Long texte}
-	    \label{fig:image}
-	\end{figure}
-	\end{verbatim}
+		\begin{figure}[tph!]
+			\centering
+			\includegraphics[width=1\linewidth]%
+			{image}
+			\caption[Cour texte]{Long texte}
+			\label{fig:image}
+		\end{figure}
+	\end{verbatim}\hrule
+	
 \end{figure}\linebreak
 %
-Les lettres qui sont placées entre crochets sont les paramètres de position de la figure dont une liste détaillée se trouve sur Wikibook\footnotemark \footnotetext{\url{https://fr.wikibooks.org/wiki/LaTeX/Éléments_flottants_et_figures}}. Concernant les références croisées le fonctionnement est encore plus simple : l'on ajoute une étiquette avec la commande \verb|\label{|\textit{marqueur}\verb|}| pour ensuite la référencer avec \verb|\ref{|\textit{marqueur}\verb|}|. Les références croisées sont importantes en raison de la manière dont \LaTeX{} gère le positionnement des objet flottant. Ces derniers peuvent être situé ailleurs qu'a leur position relative au code. 
-\par 
+\par Les lettres qui sont placées entre crochets sont les paramètres de position de la figure dont une liste détaillée se trouve sur Wikibook\footnotemark \footnotetext{\url{https://fr.wikibooks.org/wiki/LaTeX/Éléments_flottants_et_figures}}. Similairement, il y a l'environnement \textit{table} qui fonctionne exactement comme \textit{figure}. D'ailleurs, ces derniers sont identiques à l'exception de la légende. En raison de la manière dont \LaTeX{} gère le positionnement des objets flottants, ces derniers peuvent être situés ailleurs qu'à leur position relative dans le code d'où l'importance des références croisées. Afin de forcer un flottant à prendre sa place absolue, il suffit d'utiliser le paramètre de position \textbf{H} fourni dans l'extension \textit{float}.
 %
+\begin{table}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"PingHistogramTue 5 May 2020 084447"}
+	\caption{Histogramme du temps aller-retour (\(ms\)) des requêtes envoyé aux serveurs de Google.ca}
+	\label{fig:pinghistogramtue-5-may-2020-084447}
+\end{table}
+%
+\par Concernant les références croisées, le fonctionnement est élémentaire : on ajoute une étiquette avec la commande \verb|\label{|\textit{marqueur}\verb|}| (qui fonctionne aussi bien dans l'environnement \textit{figure} que \textit{equation}) pour ensuite y faire référence avec \verb|\ref{|\textit{marqueur}\verb|}|. On peut aussi vouloir référencer le numéro de page en utilisant \verb|\pageref{|\textit{marqueur}\verb|}| de même qu'on peut afficher le nom avec \verb|\nameref{|\textit{marqueur}\verb|}| (automatiquement ajouté avec l'extension \textit{hyperref}) Par ailleurs, l'extension \textit{amsmath} ajoute la commande \verb|\eqref{|\textit{marqueur}\verb|}| qui à la différence de \verb|\ref{}| insère le numéro entre parenthèses pour distinguer les équations des autres objets puisque par défaut les nombres naturels sont utilisés dans l'affichage des compteurs.
+\par Sauf exception près, les compteurs de bases sont suffisants, mais il est possible d'avoir ses propres compteurs. Il faut pour cela considérer l'une des deux lignes suivantes (à ajouter de préférence dans le préambule):
+%
+\begin{center}
+	\begin{tabular}{l}
+		\verb|\newcounter{|\textit{NomDuNouveauCompteur}\verb|}|\\
+		\verb|\newcounter{|\textit{NomDuNouveauCompteur}\verb|}[|\textit{NomAutreCompteur}\verb|]|
+	\end{tabular}
+\end{center}
+%
+La deuxième commande à la particularité de créer un compteur qui recommence à zéro chaque fois qu'un autre compteur augmente. C'est analogue au compteur de sous-sections qui repart à zéro à chaque nouvelle section. Une autre analogie avec les compteurs de sectionnement, est la numérotation des théorèmes, des corollaires, des lemmes, des remarques et des définitions fournis dans les extensions de l'\AmS. À titre d'exemple, \verb|\newtheorem{theorem}{Théorème}[|\textit{section}\verb|]| est une commande à inscrire dans le préambule pour que les théorèmes soient numérotés suivant les sections. Le WikiBook\footnotemark\footnotetext{\url{https://en.wikibooks.org/wiki/LaTeX/Counters}} concernant les compteurs est beaucoup plus complet que cette introduction.
+\par Autour des références croisées se trouvent aussi les notes de bas de page que l'on peut générer avec les commandes  \verb|\footnotemark| puis \verb|\footnotetext{|\textit{texte}\verb|}| ou directement avec \verb|\footnote{|\textit{texte}\verb|}| (cette dernière peut avoir l'option \verb|[nombre]| pour manuellement assigner le numéro à la note de bas de page). Comme mentionné dans l'introduction les bibliographies ainsi que les index sont des parties essentielles du document. La construction d'une bibliographie nécessite notamment de créer un nouveau fichier dont l'extension est \textit{bib} ou \textit{bst}. Mais la création manuelle d'un tel fichier devient vite laborieuse, et par conséquent l'utilisation d'éditeur de bibliographie est très pratique. L'un d'entre eux est \textit{KBibTeX}, un éditeur libre et gratuit. L'utilisation peut différer selon les éditeurs, mais le concept est de remplir des champs de sorte que le logiciel retourne les références formatées dans un fichier. Ce fichier pourra ensuite être indiqué dans le code par la commande \verb|\bibliography{|\textit{fichier bib}\verb|}|. Une fois la bibliographie créée, il suffit d'inscrire la commande \verb|\cite{|\textit{bibid}\verb|}| pour que le numéro de la référence apparaisse. La bibliographie s'affichera selon le style indiqué dans la commande \verb|\bibliographystyle{|\textit{style}\verb|}| qui s'affichera avec \verb|\bibliography{|\textit{/path/bibliograhie.bib}\verb|}|.
+
+\par Le fonctionnement des index est encore plus simple, il suffit d'inclure dans le préambule l'extension \textit{imakeidx}, puis d'utiliser \verb|\index{| \textit{mot clé}\verb|}| à l'endroit désiré pour qu'une référence soit affichée par \verb|printindex|. L'affichage peut d'ailleurs être configuré dans le préambule. Si on veut qu'il soit sur 3 colonne, alors il suffit de le spécifier comme option : \verb|\makeindex[columns=3]|. La documentation\footnotemark\footnotetext{\url{http://ctan.mirror.globo.tech/macros/latex/contrib/imakeidx/imakeidx.pdf}} sur l'extension \textit{imakeidx} donne d'autres exemples plus complexes afin de modifier l'index.
+
+\par Avec les précédentes parutions de l'Axiomatique incluant celle-ci, l'essentiel de l'information pour être apte à rédiger ses rapports de manière professionnelle a été abordé. Ainsi se termine l'introduction à la pratique sous \LaTeX. Naturellement, il y aurait encore beaucoup de sujet à traité tel les \textit{beamer} ou les milliers d'extensions disponibles, mais ces derniers sont très bien détaillé dans la documentation disponible sur CTAN. 
+
+
+%\par Avec les précédentes parutions de l'Axiomatique incluant celle-ci, l'essentiel de l'information pour être apte à rédiger ses rapports de manière professionnelle a été abordé. L'introduction tire bientôt à sa fin, mais une chose incontournable n'a pas été traitée. Celui de produire des diapositives aussi appelées \textit{beamer}. Ce sujet sera le dernier et conclura la série d'articles portant sur la pratique de \LaTeX.
+
 %\onecolumn
 %
 %\par Avec les graphiques, il parfois nécessaire de changer orientation de la page de même que sa structure, passer de deux colonnes à une seule. Le changement d'orientation est fourni par l'extension \verb|lscape| (à inclure dans le préambule). Les commandes \verb|\onecolumn| et \verb|\twocolumn| permette de changer la structure en de la page. L'extension \verb|mulitcols|, il est possible d'avoir neuf colonnes sur une page (cette extension fournit l'environnement\footnote{\url{http://ctan.mirror.colo-serv.net/macros/latex/required/tools/multicol.pdf}} \verb|multicols|).
