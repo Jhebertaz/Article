@@ -69,9 +69,14 @@
 	\section*{Promathation}
 	Combien de langage comprenez-vous ? Au vu du titre, il n'est évidemment pas question d'un système de signes vocaux tel le français, mais bien de langages de programmation tel Python. On retrouve ce dernier en mathématiques comme dans nombre d'autres domaines. En particulier, c'est dans le traitement et l'analyse de donnée que Python excelle et est employé. Encore une fois, le sujet ne concerne ni les bases du langage ni les notions élémentaires d'analyse numérique. Le présent article porte sur la compréhension de certains objets, de certains concepts et de certaines méthodes d'un point de vue mathématique pure. 
 	\subsection*{Analyse réel}
-		Débutons alors par quelque chose de simple. Soit \(f\) une application de \(\real\) à valeur dans \(\real\) telle que \(f(x)=x^2\). Déterminons la nature injective de \(f\). L'on sait que pour qu'une fonction soit injective, il faut absolument que pour chaque image, une seule préimage y soit associée. Autrement dit, que chaque flèche distinct tirée d'un archer atteigne une cible différente. Il est assez aisé de concevoir un petit programme qui executerai une boucle pour déterminer si une fonction simple est injective. L'on pourrait commencer par vouloir définir cettedite fonction. Du fait de la simplicité de la application précèdamment utilisée une fonction anynome (sans nom). 
-			\begin{Code}\ref{code:exemple1}
+		Débutons alors par quelque chose de simple. Soit \(f\) une application de \(\real\) à valeur dans \(\real\) telle que \(f(x)=x^2\). Déterminons la nature injective de \(f\). L'on sait que pour qu'une fonction soit injective, il faut absolument que pour chaque image, une seule préimage y soit associée. Autrement dit, que chaque flèche distinct tirée d'un archer atteigne une cible différente. Il est assez aisé de concevoir un petit programme qui executerai une boucle pour déterminer si une fonction simple est injective. L'on pourrait commencer par vouloir définir cettedite fonction.
+%		Du fait de la simplicité de l'application précèdamment utilisée une fonction anynome (sans nom). 
+			\begin{Code}\label{code:exemple1}
 				\lstinputlisting[language=Python]{exemple1.py}
 				\caption{exemple.py}
 			\end{Code}
+		Une autre application est créée pour trouver les prémiages associés à une image. Il suffit maintenant de vérifier que le nombre d'éléments dans la liste retourné est 1 pour conclure que sur le graphe la fonction est injective.
+	\subsection*{Algèbre}
+		Dans le tout le spectre de l'algèbre et de ces nombreuses ramifications l'on retrouve le concept de groupe. Brievement, un groupe est un ensemble d'éléments muni d'une opération et respectant quatres propriétés. Nommément, loi de composition interne, associativité, l'existence d'un élément neutre et l'existence d'un élément inverse. Une fois qu'un groupe est bien formalisé, l'on peut commencer à trouver des sous-groupes irritant de toute les propriétées du groupe dont il est tiré tout en ayant des propriétés distincte intrinsèque à lui-même (le sous-groupe). L'on pourrait donc vouloir, par exemple, trouver un sous-groupe normal ayant de facto la commutativité. L'un des quatres principes important de la programmation orienté objet est l'héritage.
+		
 \end{document}
